@@ -1,0 +1,8 @@
+- name: HELLO_AUDIENCE
+            value: ${HELLO_AUDIENCE}  
+- displayName: HELLO_AUDIENCE
+  name: HELLO_AUDIENCE
+  required: false
+  value: Engineer 
+
+Git URL: https://github.com/sclorg/cakephp-ex.git
