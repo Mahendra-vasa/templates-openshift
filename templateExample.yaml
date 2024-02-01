@@ -1,10 +1,10 @@
 apiVersion: template.openshift.io/v1
 kind: Template
 metadata:
-  name: php-mahi
+  name: 
   namespace: developer-phptemplate
 labels:
-  template: php-mysql
+  template: 
 objects:
 - apiVersion: v1
   kind: Secret
@@ -71,7 +71,7 @@ objects:
           value: ${COMPOSER_MIRROR}
         from:
           kind: ImageStreamTag
-          name: php:7.3   #update the php version tag
+          name: php:   #update the php version tag
           namespace: ${NAMESPACE}
       type: Source
     triggers:
@@ -115,9 +115,7 @@ objects:
           - name: DATABASE_NAME
             value: ${DATABASE_NAME}
           - name: HELLO_MESSAGE
-            value: ${HELLO_MESSAGE}
-          - name: HELLO_AUDIENCE
-            value: ${HELLO_AUDIENCE} 
+            value: ${HELLO_MESSAGE}  
           - name: DATABASE_USER
             valueFrom:
               secretKeyRef:
@@ -253,7 +251,7 @@ objects:
         - mysql
         from:
           kind: ImageStreamTag
-          name: mysql:8.0  #update the mysql image tag
+          name: mysql:  #update the mysql image tag
           namespace: ${NAMESPACE}
       type: ImageChange
     - type: ConfigChange
@@ -302,7 +300,7 @@ parameters:
 - description: The exposed hostname that will route to the CakePHP service, if left blank a value will be defaulted.
   displayName: Application Hostname
   name: APPLICATION_DOMAIN
-  required: true
+  value: sdsds
 - description: Github trigger secret.  A difficult to guess string encoded as part of the webhook URL.  Not encrypted.
   displayName: GitHub Webhook Secret
   required: true  
@@ -324,10 +322,6 @@ parameters:
 - displayName: HELLO_MESSAGE
   name: HELLO_MESSAGE
   required: true
-  value: Bonja
-- displayName: HELLO_AUDIENCE
-  name: HELLO_AUDIENCE
-  required: false
   value: Engineer
 - displayName: Database User
   name: DATABASE_USER
